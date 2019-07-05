@@ -59,11 +59,11 @@
             </nav>
         </div>
         @if(Auth::user() == false)
-        <div class="container" id="main">
+        <div class="container" id="index">
             @yield('content')
         </div>
         @else
-        <div class="container" id="main">
+        <div class="container" id="application">
             <br/>
             <div class="card">
                 @yield('content')

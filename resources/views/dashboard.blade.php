@@ -35,7 +35,7 @@
 					<span><h3>Total</h3></span>
 					<input type="number" readonly class="form-control" style="text-align: center; font-family: cursive;font-size: 30px" value="1500000">
 				</center>
-				<br/><br/>
+				<br><br>
 				@include('table.table-movements')
 			</div>
 		</div>
