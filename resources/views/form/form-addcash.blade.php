@@ -13,7 +13,7 @@
                     <div class="col-sm-11">
                     	<div class="row">
                     		<div class="col-sm-6">
-                    			<input class="form-control center" id="cash" name="cash" placeholder="500000" required="" type="number" min="0" />
+                    			<input class="form-control center" id="cash" name="cash" placeholder="Monto" required="" type="number" min="0" />
                     		</div>
                     		<div class="col-sm-6">
                     			<select class="browser-default custom-select">

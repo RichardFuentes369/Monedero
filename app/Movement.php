@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class movements extends Model
 {
-    //
+
+    protected $fillable = ['movement','description'];
 }

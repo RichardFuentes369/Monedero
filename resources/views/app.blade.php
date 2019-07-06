@@ -12,8 +12,9 @@
                 <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet"/>
                 <link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet"/>
                 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"/>
-                <link href="img/logo.png" rel="icon">
-                </link>
+                <link href="img/logo.png" rel="icon"/>
+                <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css?family=Lalezar&display=swap" rel="stylesheet"/>
             </meta>
         </meta>
     </head>
