@@ -14,8 +14,17 @@ class CreateMovementsTable extends Migration
     public function up()
     {
         Schema::create('movements', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->increments('id');
+            $table->enum('movement',['sum','rest']);
+            $table->string('description');
+            $table->string('current_date');
+            $table->string('current_time');
+            $table->integer('id_user')->unsigned();
+            $table->foreign('id_user')
+                  ->references('id')
+                  ->on('users')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
         });
     }
 

@@ -3,9 +3,9 @@
     {{ csrf_field() }}
     <div class="row">
         <div class="input-group mb-3">
-            <div class="col-sm-1">
+            <div class="col-sm-1" id="icon-form-loguin">
                 <span class="input-group-addon">
-                    <i class="material-icons" style="-webkit-text-fill-color: #EAD9D9;-webkit-text-stroke: 0.5px #EAD9D9;">
+                    <i class="material-icons">
                         person
                     </i>
                 </span>
@@ -22,9 +22,9 @@
             </div>
         </div>
         <div class="input-group mb-3">
-            <div class="col-sm-1">
+            <div class="col-sm-1" id="icon-form-loguin">
                 <span class="input-group-addon">
-                    <i class="material-icons" style="-webkit-text-fill-color: #EAD9D9;-webkit-text-stroke: 0.5px #EAD9D9;">
+                    <i class="material-icons">
                         email
                     </i>
                 </span>
@@ -34,9 +34,9 @@
             </div>
         </div>
         <div class="input-group mb-3">
-            <div class="col-sm-1">
+            <div class="col-sm-1" id="icon-form-loguin">
                 <span class="input-group-addon">
-                    <i class="material-icons" style="-webkit-text-fill-color: #EAD9D9;-webkit-text-stroke: 0.5px #EAD9D9;">
+                    <i class="material-icons">
                         vpn_key
                     </i>
                 </span>
@@ -46,9 +46,9 @@
             </div>
         </div>
         <div class="input-group mb-3">
-            <div class="col-sm-1">
+            <div class="col-sm-1" id="icon-form-loguin">
                 <span class="input-group-addon">
-                    <i class="material-icons" style="-webkit-text-fill-color: #EAD9D9;-webkit-text-stroke: 0.5px #EAD9D9;">
+                    <i class="material-icons">
                         phone
                     </i>
                 </span>
@@ -58,9 +58,9 @@
             </div>
         </div>
         <div class="input-group mb-3">
-            <div class="col-sm-1">
+            <div class="col-sm-1" id="icon-form-loguin">
                 <span class="input-group-addon">
-                    <i class="material-icons" style="-webkit-text-fill-color: #EAD9D9;-webkit-text-stroke: 0.5px #EAD9D9;">
+                    <i class="material-icons">
                         calendar_today
                     </i>
                 </span>
@@ -70,9 +70,9 @@
             </div>
         </div>
         <div class="input-group mb-3">
-            <div class="col-sm-1">
+            <div class="col-sm-1" id="icon-form-loguin">
                 <span class="input-group-addon">
-                    <i class="material-icons" style="-webkit-text-fill-color: #EAD9D9;-webkit-text-stroke: 0.5px #EAD9D9;">
+                    <i class="material-icons">
                         wc
                     </i>
                 </span>

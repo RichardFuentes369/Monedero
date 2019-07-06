@@ -36,7 +36,9 @@
 					<input type="number" readonly class="form-control" style="text-align: center; font-family: cursive;font-size: 30px" value="1500000">
 				</center>
 				<br><br>
-				@include('table.table-movements')
+				<div class="table-responsive-sm">
+					@include('table.table-movements')
+				</div>
 			</div>
 		</div>
 	</div>

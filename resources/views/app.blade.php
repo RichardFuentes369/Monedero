@@ -17,7 +17,7 @@
             </meta>
         </meta>
     </head>
-    <body style="background-color: gray">
+    <body id="body">
         <div class="login">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="col-sm-12">
@@ -26,13 +26,13 @@
                             <div class="col-sm-3">
                                 @if(Auth::check() == false)
                                 <a class="navbar-brand" href="{{ url('/') }}">
-                                    <img src="img/logo.png" style="height: 50px; width: 50px">
+                                    <img src="img/logo.png" id="logo">
                                         Monedero
                                     </img>
                                 </a>
                                 @else
                                 <a class="navbar-brand" href="#">
-                                    <img src="img/logo.png" style="height: 50px; width: 50px">
+                                    <img src="img/logo.png" id="logo">
                                         Monedero
                                     </img>
                                 </a>
@@ -45,7 +45,7 @@
                             @else
                             <div class="col-sm-9">
                                 <div class="row">
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-10">
                                     </div>
                                     <div class="col-sm-1">
                                         @include('nav.nav-access')
