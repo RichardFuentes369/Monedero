@@ -34,10 +34,10 @@
 				<center>
 					<br/>
 					<span><h3 id="title">Dinero en Cartera</h3></span>
-					<input id="input-cash" type="number" readonly class="form-control" value="1500000">
+					<input id="input-cash" type="number" readonly class="form-control" value="1800000">
 				</center>
 				<br><br>
-				<div class="table-responsive-sm">
+				<div class="table-responsive-sm" >
 					@include('table.table-movements')
 				</div>
 			</div>

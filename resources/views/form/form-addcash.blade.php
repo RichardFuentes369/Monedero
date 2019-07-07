@@ -1,4 +1,4 @@
-<form action="">
+<form method="post" v-on:submit.prevent="createCash">
     <div class="col-sm-12">
         <div class="row">
             <div class="col-sm-10">
@@ -13,13 +13,13 @@
                     <div class="col-sm-11">
                     	<div class="row">
                     		<div class="col-sm-6">
-                    			<input class="form-control center" id="cash" name="cash" placeholder="Monto" required="" type="number" min="0" />
+                    			<input class="form-control center" id="cash" name="rode" placeholder="Monto" required="" type="number" min="0" />
                     		</div>
                     		<div class="col-sm-6">
-                    			<select class="browser-default custom-select">
+                    			<select class="browser-default custom-select" name="operation">
 								  <option selected>--Seleccióne--</option>
-								  <option value="1">Sumar</option>
-								  <option value="2">Restar</option>
+								  <option value="sum">Sumar</option>
+								  <option value="rest">Restar</option>
 								</select>
                     		</div>
                     	</div>
@@ -34,7 +34,7 @@
                         </span>
                     </div>
                     <div class="col-sm-11">
-                        <textarea class="form-control" id="text-area"></textarea>
+                        <textarea class="form-control" id="text-area" name="description" maxlength="125"></textarea>
                     </div>
                 </div>
             </div>

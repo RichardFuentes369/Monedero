@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Carbon\Carbon;
 
 class CreateMovementsTable extends Migration
 {
@@ -17,8 +18,10 @@ class CreateMovementsTable extends Migration
             $table->increments('id');
             $table->enum('movement',['sum','rest']);
             $table->string('description');
-            $table->string('current_date');
-            $table->string('current_time');
+            $table->date('current_date')->default(Carbon::now());
+            $table->time('current_time')->default(Carbon::now());
+            $table->double('monto');
+            $table->double('total');
             $table->integer('id_user')->unsigned();
             $table->foreign('id_user')
                   ->references('id')

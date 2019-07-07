@@ -29912,24 +29912,19 @@ return /******/ (function(modules) { // webpackBootstrap
 });
 ;
 //# sourceMappingURL=axios.map
-var urlMovements = 'https://jsonplaceholder.typicode.com/users';
 new Vue({
-	el: '#movement_crud',
-	created: function(){
+	el: '#movements_crud',
+	created: function() {
 		this.getMovements();
 	},
 	data: {
-		
-
-	},
-	computed: {
-		
-
+		movements: []
 	},
 	methods: {
 		getMovements: function() {
-			axios.get(urlMovements).then(response => {
-				this.lists = response.data
+			var urlMovement= 'cash';
+			axios.get(urlMovement).then(response => {
+				this.movements = response.data
 			});
 		}
 	}	

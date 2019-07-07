@@ -1,21 +1,30 @@
 new Vue({
-	el: '#movement_crud',
-	created: function(){
+	el: '#movements_crud',
+	created: function() {
 		this.getMovements();
 	},
 	data: {
-		
-
-	},
-	computed: {
-		
-
+		movements: [],
+		newMovement: '',
+		errors: [],
 	},
 	methods: {
 		getMovements: function() {
-			axios.get(urlMovements).then(response => {
-				this.lists = response.data
+			var urlMovement = 'cash';
+			axios.get(urlMovement).then(response => {
+				this.movements = response.data
 			});
-		}
+		},
+		createCash: function() {
+			var urlMovement = 'cash';
+			axios.post(url, {
+				movement: this.movement
+			}).then(response => {
+				this.getMovements();
+				this.newMovement = '';
+				this.errors = [];
+				toastr.success('Nueva tarea creada con exito');
+			});
+		},
 	}	
 })

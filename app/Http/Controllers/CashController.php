@@ -15,7 +15,9 @@ class CashController extends Controller
      */
     public function index()
     {
-        $movements = Movement::orderBy('id','ASC')->where('id_user','=',Auth::user()->id);
+        $user_id = Auth::user()->id;
+        $movements = Movement::where('id_user','=',$user_id)->get();
+        return $movements;
     }
 
     /**
@@ -25,7 +27,7 @@ class CashController extends Controller
      */
     public function create()
     {
-        //
+        //formulario
     }
 
     /**
@@ -36,18 +38,15 @@ class CashController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $this->validate($request, [
+            'operation' => 'required',
+            'description' => 'required',
+            'rode' => 'required',
+        ]);
+        
+        Movement::create($request->all());
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return;
     }
 
     /**
@@ -58,7 +57,9 @@ class CashController extends Controller
      */
     public function edit($id)
     {
-        //
+        $movements = Movement::findOrFail($id);
+        //formulario
+        return $movements;
     }
 
     /**
@@ -81,6 +82,7 @@ class CashController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $movements = Movement::findOrFail($id);
+        $movements->delete();
     }
 }
