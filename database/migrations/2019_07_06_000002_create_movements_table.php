@@ -20,8 +20,8 @@ class CreateMovementsTable extends Migration
             $table->string('description');
             $table->date('current_date')->default(Carbon::now());
             $table->time('current_time')->default(Carbon::now());
-            $table->double('monto');
-            $table->double('total');
+            $table->double('rode');
+            $table->double('total')->nullable();
             $table->integer('id_user')->unsigned();
             $table->foreign('id_user')
                   ->references('id')

@@ -21,4 +21,4 @@ Route::group(['prefix'=>'home'], function(){
 	Route::get('Logout','LoginController@logout');
 });
 
-Route::resource('cash', 'CashController', ['except' => 'show']);
+Route::resource('cashs', 'CashController', ['except' => 'show', 'create', 'edit']);

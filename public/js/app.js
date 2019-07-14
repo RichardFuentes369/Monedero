@@ -29918,14 +29918,37 @@ new Vue({
 		this.getMovements();
 	},
 	data: {
-		movements: []
+		movements: [],
+		newRode: '',
+		newMovement: '',
+		newDescription: ''
 	},
 	methods: {
 		getMovements: function() {
-			var urlMovement= 'cash';
-			axios.get(urlMovement).then(response => {
+			var urlCash = 'cashs';
+			axios.get(urlCash).then(response => {
 				this.movements = response.data
 			});
-		}
+		},
+		deleteMovement: function(movements) {
+			var url = 'cashs/' + movements.id;
+			axios.delete(url).then(response => {
+				this.getMovements();
+			});
+		},
+		createMovement: function() {
+			var url = 'cashs';
+			axios.post(url, {
+				rode: this.newRode,
+				movement: this.newMovement,
+				description: this.newDescription
+			}).then(response => {
+				this.getMovements();
+				this.newRode='';
+				this.newMovement='';
+				this.newDescription='';
+			});
+		},
 	}	
-})
+});
+

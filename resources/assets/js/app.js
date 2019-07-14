@@ -5,26 +5,36 @@ new Vue({
 	},
 	data: {
 		movements: [],
+		newRode: '',
 		newMovement: '',
-		errors: [],
+		newDescription: ''
 	},
 	methods: {
 		getMovements: function() {
-			var urlMovement = 'cash';
-			axios.get(urlMovement).then(response => {
+			var urlCash = 'cashs';
+			axios.get(urlCash).then(response => {
 				this.movements = response.data
 			});
 		},
-		createCash: function() {
-			var urlMovement = 'cash';
+		deleteMovement: function(movements) {
+			var url = 'cashs/' + movements.id;
+			axios.delete(url).then(response => {
+				this.getMovements();
+			});
+		},
+		createMovement: function() {
+			var url = 'cashs';
 			axios.post(url, {
-				movement: this.movement
+				rode: this.newRode,
+				movement: this.newMovement,
+				description: this.newDescription
 			}).then(response => {
 				this.getMovements();
-				this.newMovement = '';
-				this.errors = [];
-				toastr.success('Nueva tarea creada con exito');
+				this.newRode='';
+				this.newMovement='';
+				this.newDescription='';
 			});
 		},
 	}	
-})
+});
+

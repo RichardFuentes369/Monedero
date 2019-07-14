@@ -21,16 +21,6 @@ class CashController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //formulario
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -38,28 +28,18 @@ class CashController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'operation' => 'required',
-            'description' => 'required',
-            'rode' => 'required',
-        ]);
+        $user_id = Auth::user()->id;
         
-        Movement::create($request->all());
+        $this->validate($request, [
+            'rode' => 'required',
+            'movement' => 'required',
+            'description' => 'required',
+            'id_user' => $user_id,
+        ]);
 
-        return;
-    }
+        //Movement::create($request->all());
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $movements = Movement::findOrFail($id);
-        //formulario
-        return $movements;
+        return $request;
     }
 
     /**
