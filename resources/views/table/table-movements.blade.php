@@ -1,4 +1,4 @@
-<table class="table" id="movements_crud">
+<table class="table" id="movements">
   <thead class="thead-dark">
     <tr>
       <th scope="col">id</th>
@@ -28,5 +28,4 @@
     </tr>
   </tbody>
 </table>
-
 

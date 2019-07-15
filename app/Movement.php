@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Movement extends Model
 {    
-    protected $fillable = ['id','movement','description','current_date','current_time','rode','id_user'];
+	protected $table = "movements";
+    
+    protected $fillable = ['movement','description','id_user'];
 }

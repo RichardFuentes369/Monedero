@@ -34,10 +34,10 @@
 				<center>
 					<br/>
 					<span><h3 id="title">Dinero en Cartera</h3></span>
-					<input id="input-cash" type="number" readonly class="form-control" value="1800000">
+					<button onclick="obtener()" class="btn btn-secondary">¿Cuanto Tengo?</button>
 				</center>
 				<br><br>
-				<div class="table-responsive-sm" >
+				<div class="table-responsive-sm" id="movements_crud">
 					@include('table.table-movements')
 				</div>
 			</div>
@@ -45,3 +45,13 @@
 	</div>
 	@endif
 @endsection
+
+
+<script>
+	function obtener(){		
+		var table = document.getElementById("movements").getElementsByTagName('tr')[1];
+		var product=table.getElementsByTagName("td")[6].innerHTML;
+		alert(product)
+		return false;
+	}
+</script>

@@ -1,4 +1,5 @@
-<form method="post" v-on:submit.prevent="createMovement">
+<form method="POST" action="{{ url('cashsP') }}" >
+    @csrf
     <div class="col-sm-12">
         <div class="row">
             <div class="col-sm-10">

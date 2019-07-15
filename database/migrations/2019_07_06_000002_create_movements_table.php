@@ -28,6 +28,7 @@ class CreateMovementsTable extends Migration
                   ->on('users')
                   ->onUpdate('cascade')
                   ->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

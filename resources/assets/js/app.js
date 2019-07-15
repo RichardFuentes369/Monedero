@@ -5,36 +5,24 @@ new Vue({
 	},
 	data: {
 		movements: [],
-		newRode: '',
-		newMovement: '',
-		newDescription: ''
+		newRode:'',
+		newMovement:'',
+		newDescription:'',
+		errors: []
 	},
 	methods: {
 		getMovements: function() {
-			var urlCash = 'cashs';
-			axios.get(urlCash).then(response => {
+			var urlMovements = 'cashs'; 
+			axios.get(urlMovements).then(response => {
 				this.movements = response.data
 			});
 		},
-		deleteMovement: function(movements) {
-			var url = 'cashs/' + movements.id;
-			axios.delete(url).then(response => {
+		deleteMovement: function(movements){
+			var url = 'cashs/'+movements.id;
+			axios.delete(url).then(reponse => {
 				this.getMovements();
+				toastr.success('Eliminado correctamente');
 			});
-		},
-		createMovement: function() {
-			var url = 'cashs';
-			axios.post(url, {
-				rode: this.newRode,
-				movement: this.newMovement,
-				description: this.newDescription
-			}).then(response => {
-				this.getMovements();
-				this.newRode='';
-				this.newMovement='';
-				this.newDescription='';
-			});
-		},
-	}	
+		}
+	}
 });
-
