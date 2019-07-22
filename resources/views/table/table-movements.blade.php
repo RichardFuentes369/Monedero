@@ -1,3 +1,5 @@
+<input class="form-control" id="myInput" type="text" placeholder="Search.." onchange="filter()">
+<br/>
 <table class="table" id="movements">
   <thead class="thead-dark">
     <tr>
@@ -11,12 +13,12 @@
       <th scope="col">Total</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="myTable">
     <tr v-for="movements in movements">
       <th scope="row">@{{ movements.id }}</th>
       <td>@{{ movements.current_date }}</td>
-      <td id="td-more" v-if="movements.movement == 'sum'"><center>+</center></td>
-      <td id="td-less" v-else><center>-</center></td>
+      <td id="td-more" v-if="movements.movement == 'sum'"><center>sumo</center></td>
+      <td id="td-less" v-else><center>resto</center></td>
       <td>@{{ movements.description }}</td>
       <td>@{{ movements.current_time }}</td>
       <td>

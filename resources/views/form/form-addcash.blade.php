@@ -1,5 +1,4 @@
-<form method="POST" action="{{ url('cashsP') }}" >
-    @csrf
+<form  method="post" v-on:submit.prevent="createMovements">
     <div class="col-sm-12">
         <div class="row">
             <div class="col-sm-10">
@@ -14,13 +13,19 @@
                     <div class="col-sm-11">
                         <div class="row">
                             <div class="col-sm-6">
-                                <input class="form-control center" id="cash" name="rode" placeholder="Monto" required="" type="number" min="0" v-model="newRode"/>
+                                <input class="form-control center" id="cash" min="0" id="rode" name="rode" placeholder="Monto" required="" type="number" v-model="newRode"/>
                             </div>
                             <div class="col-sm-6">
                                 <select class="browser-default custom-select" name="movement" v-model="newMovement">
-                                  <option selected>--Seleccióne--</option>
-                                  <option value="sum">Sumar</option>
-                                  <option value="rest">Restar</option>
+                                    <option disabled selected="true">
+                                        --Seleccióne--
+                                    </option>
+                                    <option value="sum">
+                                        Sumar
+                                    </option>
+                                    <option value="rest">
+                                        Restar
+                                    </option>
                                 </select>
                             </div>
                         </div>
@@ -35,14 +40,17 @@
                         </span>
                     </div>
                     <div class="col-sm-11">
-                        <textarea class="form-control" id="text-area" name="description" maxlength="125" v-model="newDescription"></textarea>
+                        <textarea class="form-control" id="text-area" maxlength="125" name="description" v-model="newDescription">
+                        </textarea>
                     </div>
                 </div>
             </div>
             <div class="col-sm-1">
                 <br/>
                 <center>
-                    <input type="submit" class="btn btn-primary" id="btn-add" value="Agregar">
+                    <button type="submit" class="btn btn-primary" id="btn-add">
+                        Agregar
+                    </button>
                 </center>
             </div>
         </div>

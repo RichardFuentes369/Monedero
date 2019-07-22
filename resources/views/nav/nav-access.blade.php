@@ -7,9 +7,7 @@
             <a class="dropdown-item" href="#">
                 Perfil
             </a>
-            <a class="dropdown-item" href="#">
-                Ajustes
-            </a>
+            <button class="dropdown-item" data-toggle="modal" data-target="#modal1">Ajustes</button>
             <a class="dropdown-item" href="{{ url('home/Logout') }}">
                 Salir
             </a>

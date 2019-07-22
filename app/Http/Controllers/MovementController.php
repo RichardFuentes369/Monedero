@@ -15,7 +15,7 @@ class MovementController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {        
         $user_id = Auth::user()->id;
         $movements = DB::SELECT('SELECT * FROM MOVEMENTS WHERE id_user = :varuser Order By id DESC',['varuser'=>$user_id]);
         return $movements;
@@ -38,7 +38,7 @@ class MovementController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {        
         $id = Auth::user()->id;
         $monto = $request->input('rode');
         $consulta = DB::SELECT('SELECT total FROM MOVEMENTS WHERE id_user = :varid ORDER BY id DESC LIMIT 1',['varid' => $id]);
@@ -50,12 +50,12 @@ class MovementController extends Controller
             $m->rode = $monto;
             $m->movement = $request->input('movement');
             $m->description = $request->input('description');
-            $m->total = $request->input('rode');
-            $m->id_user = $id;
+            $m->total = $monto;
+            $m->id_user = $id;         
             $m->save(); 
         }else{
             $m = new Movement();
-            $m->rode = $request->input('rode');
+            $m->rode = $monto;
             $m->movement = $request->input('movement');
             $m->description = $request->input('description');
             if($m->movement == 'sum'){
@@ -69,7 +69,18 @@ class MovementController extends Controller
 
         $consultatotal = DB::SELECT('SELECT total FROM MOVEMENTS WHERE id_user = :varid ORDER BY id LIMIT 1',['varid' => $id]);
 
-        return back();
+        return;
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
     }
 
     /**
@@ -80,9 +91,7 @@ class MovementController extends Controller
      */
     public function edit($id)
     {
-        $movement = Movement::findOrFail($id);
-        //formulario
-        return $movement;
+        //
     }
 
     /**

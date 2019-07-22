@@ -29921,28 +29921,35 @@ new Vue({
 		movements: [],
 		newRode:'',
 		newMovement:'',
-		newDescription:'',
-		errors: []
+		newDescription:''
 	},
 	methods: {
 		getMovements: function() {
-			var urlMovements = 'cashs'; 
-			axios.get(urlMovements).then(response => {
+			var urlGMovements = 'cashs'; 
+			axios.get(urlGMovements).then(response => {
 				this.movements = response.data
 			});
 		},
+		createMovements: function() {
+			var urlCMovements = 'cashs';
+			axios.post(urlCMovements, {
+				movement : this.newMovement,
+				description : this.newDescription,
+				rode : this.newRode,
+			}).then(response => {
+				this.getMovements();
+				this.newMovement = '';
+				this.newDescription = '';
+				this.newRode = '';
+				toastr.success('Creado correctamente');
+			});
+		},
 		deleteMovement: function(movements){
-			var url = 'cashs/'+movements.id;
-			axios.delete(url).then(reponse => {
+			var urlDMovements = 'cashs/'+movements.id;
+			axios.delete(urlDMovements).then(reponse => {
 				this.getMovements();
 				toastr.success('Eliminado correctamente');
 			});
-		},
-		createMovement: function() {
-			var url = 'cashsP';
-			axios.post(url).then(response => {
-				console.log('estoy aqui');
-			});
-		},
+		}
 	}
 });

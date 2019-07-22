@@ -21,5 +21,4 @@ Route::group(['prefix'=>'home'], function(){
 	Route::get('Logout','LoginController@logout');
 });
 
-Route::resource('cashs', 'MovementController', ['except' => 'show','store']);
-Route::post('cashsP','MovementController@store');
+Route::resource('cashs', 'MovementController');

@@ -28,8 +28,9 @@
 	@else
 	<div id="crud" class="row">
 		<div class="col-sm-12">
-			<div class="container">
+			<div class="container" id="movements_crud">
 				<br/><br/>
+				@include('modal.modal-settings-user')
 				@include('form.form-addcash')
 				<center>
 					<br/>
@@ -37,7 +38,7 @@
 					<button onclick="obtener()" class="btn btn-secondary">¿Cuanto Tengo?</button>
 				</center>
 				<br><br>
-				<div class="table-responsive-sm" id="movements_crud">
+				<div class="table-responsive-sm">
 					@include('table.table-movements')
 				</div>
 			</div>
@@ -53,5 +54,16 @@
 		var product=table.getElementsByTagName("td")[6].innerHTML;
 		alert(product)
 		return false;
+	}
+
+	function filter(){
+		$(document).ready(function(){
+		  $("#myInput").on("keyup", function() {
+		    var value = $(this).val().toLowerCase();
+		    $("#myTable tr").filter(function() {
+		      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		    });
+		  });
+		});
 	}
 </script>
