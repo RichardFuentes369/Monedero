@@ -52,7 +52,7 @@
 	function obtener(){		
 		var table = document.getElementById("movements").getElementsByTagName('tr')[1];
 		var product=table.getElementsByTagName("td")[6].innerHTML;
-		alert(product)
+		alert("Actualmente el dinero que poseo es: "+product)
 		return false;
 	}
 

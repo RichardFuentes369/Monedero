@@ -31,3 +31,4 @@
   </tbody>
 </table>
 
+@include('nav.nav-pagination')

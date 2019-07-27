@@ -14,11 +14,21 @@ class MovementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {        
         $user_id = Auth::user()->id;
-        $movements = DB::SELECT('SELECT * FROM MOVEMENTS WHERE id_user = :varuser Order By id DESC',['varuser'=>$user_id]);
-        return $movements;
+        $movements = Movement::orderBy('id','Desc')->where('id_user','=',$user_id)->paginate(10);
+        return [
+            'pagination' => [
+                'total' => $movements->total(),
+                'current_page' => $movements->currentPage(),
+                'per_page' => $movements->perPage(),
+                'last_page' => $movements->lastPage(),
+                'from' => $movements->firstItem(), 
+                'to' => $movements->lastItem(), 
+            ],
+            'movements' => $movements
+        ];
     }
 
     /**
