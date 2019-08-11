@@ -1,4 +1,4 @@
-<form action="">
+<form method="" action="">
 	<div class="row">
         <div class="input-group mb-3">
             <div class="col-sm-1" id="icon-form-loguin">
@@ -91,7 +91,7 @@
                                 Femenino
                             </span>
                         </div>
-                    @else    
+                    @else
                     	<div class="col-sm-6">
                             <input id="man" name="gender" type="radio" value="M"/>
                             <span>
@@ -108,6 +108,17 @@
                     </div>
                 </span>
             </div>
+
+
         </div>
-    </div>
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-sm-8">
+						</div>
+						<div class="col-sm-4">
+							<button class="btn btn-primary btn-block">Guardar</button>
+						</div>
+					</div>
+				</div>
+		</div>
 </form>

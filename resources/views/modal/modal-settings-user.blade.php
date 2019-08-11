@@ -10,9 +10,6 @@
       <div class="modal-body">
         @include('form.form-editprofile')
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Guardar</button>
-      </div>
       <center><h5>Si el  sistema se reinicia, la contraseña a sido guardada exitosamente</h5></center>
     </div>
   </div>
