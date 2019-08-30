@@ -22,7 +22,7 @@
       <td>@{{ movements.description }}</td>
       <td>@{{ movements.current_time }}</td>
       <td>
-        <button class="btn btn-outline-danger" id="btn-erase" 
+        <button class="btn btn-outline-danger" id="btn-erase"
         v-on:click.prevent="deleteMovement(movements)"><i class="material-icons">delete_sweep</i> </button>
       </td>
       <td>@{{ movements.rode }}</td>

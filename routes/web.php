@@ -15,9 +15,10 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::group(['prefix'=>'home'], function(){	
+Route::group(['prefix'=>'home'], function(){
 	Route::post('create','UserController@newUser');
 	Route::post('Login','LoginController@login');
+	Route::post('ChangePassword','UserController@changePassword');
 	Route::get('Logout','LoginController@logout');
 });
 

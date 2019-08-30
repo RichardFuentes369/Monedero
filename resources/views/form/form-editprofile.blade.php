@@ -1,4 +1,5 @@
-<form method="" action="">
+<form method="post" action="{{ url('home/ChangePassword') }}">
+	@csrf
 	<div class="row">
         <div class="input-group mb-3">
             <div class="col-sm-1" id="icon-form-loguin">
