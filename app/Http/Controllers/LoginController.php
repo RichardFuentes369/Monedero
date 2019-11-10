@@ -22,13 +22,13 @@ class LoginController extends Controller
             return back();    
         }else{
             return back()->withErrors(['email' => trans('auth.failed')])
-                        ->withInput(request(['email']));
+                    ->withInput(request(['email']));
         }   
     }
 
     /*Cerrar Session*/
     public function logout(){
         Auth::logout();
-        return redirect('/');
+        return back();
     }
 }

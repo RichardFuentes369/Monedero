@@ -20,7 +20,7 @@
         </meta>
     </head>
     <body id="body">
-        <div class="login">
+        <div class="login fixed-top">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="col-sm-12">
                     <div class="container">
@@ -60,6 +60,7 @@
                 </div>
             </nav>
         </div>
+        <br><br><br>
         @if(Auth::user() == false)
         <div class="container" id="index">
             @yield('content')
@@ -67,7 +68,7 @@
         @else
         <div class="container" id="application">
             <br/>
-            <div class="card">
+            <div class="card" style="background-color: #FCDEDE">
                 @yield('content')
             </div>
         </div>
