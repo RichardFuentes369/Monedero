@@ -17,7 +17,7 @@ class MovementController extends Controller
     public function index(Request $request)
     {        
         $user_id = Auth::user()->id;
-        $movements = Movement::orderBy('id','Desc')->where('id_user','=',$user_id)->paginate(10);
+        $movements = Movement::orderBy('id','Desc')->where('id_user', $user_id)->whereNull('deleted_at')->paginate(10);
         return [
             'pagination' => [
                 'total' => $movements->total(),

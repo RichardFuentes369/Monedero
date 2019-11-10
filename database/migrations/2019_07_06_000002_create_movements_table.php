@@ -28,6 +28,7 @@ class CreateMovementsTable extends Migration
                   ->on('users')
                   ->onUpdate('cascade')
                   ->onDelete('cascade');
+            $table->softDeletes(); //Columna para soft delete            
             $table->timestamps();
         });
     }
