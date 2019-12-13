@@ -50,7 +50,7 @@ new Vue({
             var urlGMovements = 'cashs?page=' + page;
             axios.get(urlGMovements).then(response => {
                 this.movements = response.data.movements.data,
-                    this.pagination = response.data.pagination
+                this.pagination = response.data.pagination
             });
         },
         createMovements: function() {
