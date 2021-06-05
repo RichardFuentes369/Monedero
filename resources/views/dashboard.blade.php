@@ -2,18 +2,16 @@
 
 @section('content')
     @if(Auth::check() == false)
-	<div id="index" class="row">
-		<div class="col-sm-12">
-			<br><br><br>
+	<div id="index" class="row my-5">
+		<div class="col-sm-12 my-5">
 			<div class="row">
 				<div class="col-sm-6" id="img-index">
-				<br/><br/><br/><br/><br/><br/>
-					<h3 id="title-index">Monedero es una app, la cual te permite realizar funciónes como: </h3>
-					<hr>
+
+					<h3 style="margin-top: 22rem!important" id="title-index">Monedero es una app, la cual te permite realizar funciónes como: </h3>
 					<ul class="list-group">
-						<li class="list-group-item" id="cont-index"><h5>Llevar el control de tus gastos.</h5></li>
-						<li class="list-group-item" id="cont-index"><h5>Acceder desde cualquier parte.</h5></li>
-						<li class="list-group-item" id="cont-index"><h5>Controlar tus ingresos y egresos de una manera segura.</h5></li>
+						<li class="list-group-item text-white" id="cont-index"><h5>Llevar el control de tus gastos.</h5></li>
+						<li class="list-group-item text-white" id="cont-index"><h5>Acceder desde cualquier parte.</h5></li>
+						<li class="list-group-item text-white" id="cont-index"><h5>Controlar tus ingresos y egresos de una manera segura.</h5></li>
 					</ul>
 				</div>
 				<div class="col-sm-6">
@@ -47,6 +45,8 @@
 	@endif
 @endsection
 
+<style type="text/css">
+</style>
 
 <script>
 	function obtener(){		

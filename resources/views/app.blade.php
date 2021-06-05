@@ -60,15 +60,14 @@
                 </div>
             </nav>
         </div>
-        <br><br><br>
+
         @if(Auth::user() == false)
-        <div class="container" id="index">
+        <div class="container" id="index" style="background-color: #E4D1CD;  background: transparent;  height: 60rem!important;  display: flex;  align-items: center;">
             @yield('content')
         </div>
         @else
-        <div class="container" id="application">
-            <br/>
-            <div class="card" style="background-color: #FCDEDE">
+        <div class="container" id="application" style="background-color: #E4D1CD;  background: transparent;  height: 60rem!important;  display: grid;  align-items: center;">
+            <div class="card" style="background-color: #E4D1CD">
                 @yield('content')
             </div>
         </div>
