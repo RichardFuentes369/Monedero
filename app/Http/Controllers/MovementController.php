@@ -51,7 +51,7 @@ class MovementController extends Controller
     {        
         $id = Auth::user()->id;
         $monto = $request->input('rode');
-        $consulta = DB::SELECT('SELECT total FROM MOVEMENTS WHERE id_user = :varid ORDER BY id DESC LIMIT 1',['varid' => $id]);
+        $consulta = DB::SELECT('SELECT total FROM movements WHERE id_user = :varid ORDER BY id DESC LIMIT 1',['varid' => $id]);
         foreach ($consulta as $ult){
             $ultimototal=$ult->total;
         }
@@ -77,7 +77,7 @@ class MovementController extends Controller
             $m->save(); 
         }
 
-        $consultatotal = DB::SELECT('SELECT total FROM MOVEMENTS WHERE id_user = :varid ORDER BY id LIMIT 1',['varid' => $id]);
+        $consultatotal = DB::SELECT('SELECT total FROM movements WHERE id_user = :varid ORDER BY id LIMIT 1',['varid' => $id]);
 
         return;
     }

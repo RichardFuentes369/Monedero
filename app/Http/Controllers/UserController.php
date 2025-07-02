@@ -14,8 +14,8 @@ class UserController extends Controller
     /*Crear nuevo usuario desde loguin*/
     public function newUser(Request $request){
         $email = $request->input('email');
-        $consultaemail = DB::SELECT('SELECT * FROM Users WHERE email = :varemail',['varemail' => $email]);
-        $ultimo = DB::SELECT('SELECT * FROM Users order by id desc limit 1');
+        $consultaemail = DB::SELECT('SELECT * FROM users WHERE email = :varemail',['varemail' => $email]);
+        $ultimo = DB::SELECT('SELECT * FROM users order by id desc limit 1');
         foreach ($ultimo as $ult){
             $ultimoid=$ult->id;
         }
@@ -54,11 +54,11 @@ class UserController extends Controller
       $contra_enccrip = bcrypt($password);
 
       if($password == ''){
-        $update = DB::UPDATE('UPDATE Users SET name = :varname, lastname = :varlastname, phone = :varphone, birthdate = :varbirthdate,
+        $update = DB::UPDATE('UPDATE users SET name = :varname, lastname = :varlastname, phone = :varphone, birthdate = :varbirthdate,
           gender = :vargender, password = :varpassword WHERE email = :varemail',['varname' => $name,'varlastname' => $lastname,'varphone' => $phone,'varbirthdate' => $birthdate,'vargender' => $gender,
           'varemail' => $email,'varpassword' => $contra_enccrip]);
       }else{
-        $update = DB::UPDATE('UPDATE Users SET name = :varname, lastname = :varlastname, phone = :varphone, birthdate = :varbirthdate,
+        $update = DB::UPDATE('UPDATE users SET name = :varname, lastname = :varlastname, phone = :varphone, birthdate = :varbirthdate,
           gender = :vargender, password = :varpassword WHERE email = :varemail',['varname' => $name,'varlastname' => $lastname,'varphone' => $phone,'varbirthdate' => $birthdate,'vargender' => $gender,
           'varemail' => $email,'varpassword' => $contra_enccrip]);
       }

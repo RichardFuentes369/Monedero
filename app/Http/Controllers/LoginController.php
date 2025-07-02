@@ -18,7 +18,7 @@ class LoginController extends Controller
         ]);
 
         if(Auth::attempt($credentials)){
-            $consulta = DB::SELECT('SELECT * FROM Users WHERE email = :varemail',['varemail' => $credentials['email']]);
+            $consulta = DB::SELECT('SELECT * FROM users WHERE email = :varemail',['varemail' => $credentials['email']]);
             return back();    
         }else{
             return back()->withErrors(['email' => trans('auth.failed')])
