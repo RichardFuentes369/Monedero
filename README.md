@@ -5,3 +5,6 @@
 ➜  Monedero git:(master) ✗ composer clear-cache
 ➜  Monedero git:(master) ✗ composer install
 ➜  Monedero git:(master) ✗ php artisan migrate:fresh --seed
+
+
+//php7.3
